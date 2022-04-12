@@ -1,1 +1,1 @@
-A site of mini-games (CURRENT WORK IN PROGRESS)
+My portfolio site of mini projects
