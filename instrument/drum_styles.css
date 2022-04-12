@@ -15,4 +15,9 @@
     display:inline-block;
     width:20px;
     height:20px;
+    transition: border 0.3s;
+}
+
+.drum-hit{
+    border:2px solid blue;
 }

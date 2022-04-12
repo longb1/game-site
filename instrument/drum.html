@@ -4,23 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="drum_script.js"></script>
+    <script type="text/javascript" src="drum_script.js" defer></script>
     <link rel="stylesheet" href="drum_styles.css">
     <title>Drumkit</title>
 </head>
 <body>
     <div id="container">
-        <div id ="a-key" class="keys">A</div>
-        <div id ="s-key" class="keys">S</div>
-        <div id ="d-key" class="keys">D</div>
-        <div id ="f-key" class="keys">F</div>
-        <div id ="g-key" class="keys">G</div>
-        <div id ="h-key" class="keys">H</div>
-        <div id ="j-key" class="keys">J</div>
-        <div id ="k-key" class="keys">k</div>
-        <div id ="l-key" class="keys">L</div>
+        <div data-key="KeyA" id ="a-key" class="keys">A</div>
+        <div data-key="KeyS" id ="s-key" class="keys">S</div>
+        <div data-key="KeyD" id ="d-key" class="keys">D</div>
+        <div data-key="KeyF" id ="f-key" class="keys">F</div>
+        <div data-key="KeyG" id ="g-key" class="keys">G</div>
+        <div data-key="KeyH" id ="h-key" class="keys">H</div>
+        <div data-key="KeyJ" id ="j-key" class="keys">J</div>
+        <div data-key="KeyK" id ="k-key" class="keys">k</div>
+        <div data-key="KeyL" id ="l-key" class="keys">L</div>
     </div>
 
-
+    <audio data-key="KeyA" id="boom" controls src="./sounds/boom.wav" style="display:none"></audio>
+    <audio data-key="KeyS" id="clap" controls src="./sounds/clap.wav" style="display:none"></audio>
+    <audio data-key="KeyD" id="hihat" controls src="./sounds/hihat.wav" style="display:none"></audio>
+    <audio data-key="KeyF" id="kick" controls src="./sounds/kick.wav" style="display:none"></audio>
+    <audio data-key="KeyG" id="openhat" controls src="./sounds/openhat.wav" style="display:none"></audio>
+    <audio data-key="KeyH" id="ride" controls src="./sounds/ride.wav" style="display:none"></audio>
+    <audio data-key="KeyJ" id="snare" controls src="./sounds/snare.wav" style="display:none"></audio>
+    <audio data-key="KeyK" id="tink" controls src="./sounds/tink.wav" style="display:none"></audio>
+    <audio data-key="KeyL" id="tom" controls src="./sounds/tom.wav" style="display:none"></audio>
 </body>
 </html>
