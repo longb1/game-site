@@ -1,3 +1,13 @@
+// const rockButton=document.getElementById("rock");
+// const paperButton=document.getElementById("paper");
+// const scissorsButton=document.getElementById("scissors");
+let all_btn = document.querySelectorAll("button");
+all_btn.forEach(function(btn) {
+    btn.addEventListener("click", function() {
+        playRound(btn.id);
+    });
+});
+
 function pcPlay(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -10,11 +20,8 @@ function pcPlay(min, max) {
         return "scissors"
     }
 }
-function playRound(){
+function playRound(player){
     let pc=pcPlay(1,4)
-    let player=window.prompt("your pick")
-    console.log('robot picks '+pc)
-    console.log('player picks '+player)
     if ((pc === 'rock' && player === 'scissors') || (pc === 'paper' && player === 'rock')||(pc==='scissors'&&player==='paper')){
         console.log('u lose')
     } else if ((pc === 'rock' && player === 'paper') || (pc === 'paper' && player === 'scissors')||(pc==='scissors'&&player==='rock')) {
@@ -23,6 +30,7 @@ function playRound(){
         console.log('draw')
     }
 }
+
 function playgame(){
     
     for (let i = 0; i < 5; i++) {
