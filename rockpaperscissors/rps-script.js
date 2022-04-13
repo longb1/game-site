@@ -1,6 +1,3 @@
-// const rockButton=document.getElementById("rock");
-// const paperButton=document.getElementById("paper");
-// const scissorsButton=document.getElementById("scissors");
 const playerPick=document.getElementById('playerChoice');
 const pcPick=document.getElementById('pcChoice');
 const playerSpan=document.getElementById("playerScore");
