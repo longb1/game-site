@@ -1,7 +1,15 @@
 // const rockButton=document.getElementById("rock");
 // const paperButton=document.getElementById("paper");
 // const scissorsButton=document.getElementById("scissors");
-let all_btn = document.querySelectorAll("button");
+const playerPick=document.getElementById('playerChoice');
+const pcPick=document.getElementById('pcChoice');
+const playerSpan=document.getElementById("playerScore");
+const pcSpan=document.getElementById("pcScore");
+const result= document.createElement("h1");
+let playerScore=0;
+let pcScore=0;
+
+const all_btn = document.querySelectorAll("button");
 all_btn.forEach(function(btn) {
     btn.addEventListener("click", function() {
         playRound(btn.id);
@@ -20,21 +28,32 @@ function pcPlay(min, max) {
         return "scissors"
     }
 }
+
 function playRound(player){
     let pc=pcPlay(1,4)
+    playerPick.innerText=`You: ${player}`
+    pcPick.innerText=`Robot: ${pc}`
     if ((pc === 'rock' && player === 'scissors') || (pc === 'paper' && player === 'rock')||(pc==='scissors'&&player==='paper')){
-        console.log('u lose')
+        console.log('u lose');
+        pcScore++;
+        pcSpan.innerText=pcScore;
     } else if ((pc === 'rock' && player === 'paper') || (pc === 'paper' && player === 'scissors')||(pc==='scissors'&&player==='rock')) {
-        console.log('u win')
+        console.log('u win');
+        playerScore++;
+        playerSpan.innerText=playerScore;
     } else{
         console.log('draw')
     }
-}
-
-function playgame(){
-    
-    for (let i = 0; i < 5; i++) {
-        playRound()
+    if(playerScore+pcScore==5){
+        if(playerScore>pcScore){
+            playerPick.innerText="player wins";
+        }else{
+            pcPick.innerText="machine wins";
+        }
+        playerScore=0;
+        pcScore=0;
+        playerSpan.innerText=playerScore;
+        pcSpan.innerText=pcScore;
+        
     }
 }
-// playgame()

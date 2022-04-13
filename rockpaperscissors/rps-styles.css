@@ -8,3 +8,11 @@ div{
     margin:10px;
     padding:10px;
 }
+#pcChoice, #playerChoice{
+    display:inline;
+}
+#display{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
