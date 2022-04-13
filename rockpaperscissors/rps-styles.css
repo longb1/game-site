@@ -11,8 +11,3 @@ div{
 #pcChoice, #playerChoice{
     display:inline;
 }
-#display{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-}

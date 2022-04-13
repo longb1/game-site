@@ -3,10 +3,13 @@ const pcPick=document.getElementById('pcChoice');
 const playerSpan=document.getElementById("playerScore");
 const pcSpan=document.getElementById("pcScore");
 const result= document.createElement("h1");
+const announcer=document.getElementById("announcer")
+
 let playerScore=0;
 let pcScore=0;
 
 const all_btn = document.querySelectorAll("button");
+
 all_btn.forEach(function(btn) {
     btn.addEventListener("click", function() {
         playRound(btn.id);
@@ -31,21 +34,19 @@ function playRound(player){
     playerPick.innerText=`You: ${player}`
     pcPick.innerText=`Robot: ${pc}`
     if ((pc === 'rock' && player === 'scissors') || (pc === 'paper' && player === 'rock')||(pc==='scissors'&&player==='paper')){
-        console.log('u lose');
         pcScore++;
         pcSpan.innerText=pcScore;
     } else if ((pc === 'rock' && player === 'paper') || (pc === 'paper' && player === 'scissors')||(pc==='scissors'&&player==='rock')) {
-        console.log('u win');
         playerScore++;
         playerSpan.innerText=playerScore;
     } else{
-        console.log('draw')
+        announcer.innerText="Draw";
     }
     if(playerScore+pcScore==5){
         if(playerScore>pcScore){
-            playerPick.innerText="player wins";
+            announcer.innerText="player wins";
         }else{
-            pcPick.innerText="machine wins";
+            announcer.innerText="machine wins";
         }
         playerScore=0;
         pcScore=0;
