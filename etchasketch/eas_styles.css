@@ -3,5 +3,15 @@
 }
 
 #canvas{
+    width:50%;
     display: grid;
+    grid-template-columns: repeat(16,1fr);
+}
+
+#canvas > div{
+    padding:10px;
+}
+
+.red{
+    background-color: red;
 }
