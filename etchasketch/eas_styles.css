@@ -1,17 +1,15 @@
 *{
     border: 1px red dashed;
+    
 }
 
 #canvas{
-    width:50%;
+    width:30%;
+    height:30%;
     display: grid;
     grid-template-columns: repeat(16,1fr);
 }
 
 #canvas > div{
     padding:10px;
-}
-
-.red{
-    background-color: red;
 }

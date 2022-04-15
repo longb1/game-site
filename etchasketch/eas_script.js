@@ -1,48 +1,44 @@
 canvasElement =document.getElementById("canvas")
 
-var isToggling = false;
+colourDefault=document.querySelector('[data-colour="black"]');
+colourRubber=document.querySelector('[data-colour="white"]');
+colourCustom=document.querySelector('[data-colour="custom"]');
+
+let isToggling = false;
 
 function enableToggle(e) {
-  console.log('enableToggle')
   isToggling = true;
-
-  if (e.target !== table) {
-    toggle(e);
-  }
+  e.preventDefault()
+  e.target.style.backgroundColor='red';
 }
 
 function disableToggle() {
-  console.log('disableToggle')
   isToggling = false;
 }
 
 function toggle(e) {
+  e.onmouseenter=disableToggle;
   if (isToggling === false) {
     return;
   }
-
-  console.log('toggle:', e.target);
-
-  e.target.classList.toggle('active');
+  e.target.style.backgroundColor='red';
 }
-
-function startGame() {
-  table.onmousedown = enableToggle;
-
-  for (var i = 0, il = tableEntry.length; i < il; i++) {
-    tableEntry[i].onmouseenter = toggle; //changes color 
-  }
-
-  table.onmouseup = disableToggle;
-}
-
-startGame();
 
 for(let i =1;i<=256;i++){
     let squareDiv = document.createElement("div");
-    // squareDiv.innerText=i; 
     canvasElement.appendChild(squareDiv);
-    squareDiv.addEventListener('mousedown', toggle(startDrawing));
+
+    squareDiv.onmousedown=enableToggle;
+    squareDiv.onmouseenter=toggle;
+    squareDiv.onmouseup=disableToggle;
+    
 }
+
+colourDefault.addEventListener("click",()=>{
+  let allElements=canvasElement.children;
+  Array.from(allElements).forEach(element => {
+    element.style.backgroundColor='white'
+  });
+});
 
 
