@@ -1,0 +1,26 @@
+*{
+    background-color: grey;
+    border:1px dashed red;
+}
+
+#container{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    /* height:100px; */
+    grid-template-areas: "header header";
+}
+
+#contDisplay{
+    height:50px;
+    grid-area:header;
+}
+
+#contNumbers{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#contOperators{
+    display:grid;
+    grid-template-columns: 1fr;
+}
