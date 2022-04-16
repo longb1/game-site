@@ -4,10 +4,10 @@
 }
 
 #container{
+    width:50%;
     display:grid;
     grid-template-columns: 1fr 1fr;
-    /* height:100px; */
-    grid-template-areas: "header header";
+    grid-template-areas: "header header" "num op" "footer footer";
 }
 
 #contDisplay{
@@ -17,10 +17,19 @@
 
 #contNumbers{
     display:grid;
+    grid-area:num;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
 #contOperators{
     display:grid;
+    grid-area:op;
     grid-template-columns: 1fr;
+}
+
+#contFooter{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-area:footer;
+
 }
