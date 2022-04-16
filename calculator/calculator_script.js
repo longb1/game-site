@@ -13,8 +13,6 @@ for(let i =0;i<=9;i++){ //create number buttons 0-9
     numButton.addEventListener("click",()=>display.innerText+=i);
 }
 
-
-
 for(let i=0;i<operatorButtons.length;i++){ //append the 'data-operator' attribute of buttons to the display div.
     operatorButtons[i].addEventListener("click",()=>display.innerText+=operatorButtons[i].dataset.operator)
 }

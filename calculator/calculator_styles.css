@@ -7,7 +7,9 @@
     width:50%;
     display:grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "header header" "num op" "footer footer";
+    grid-template-areas:    "header header"
+                            "num op" 
+                            "footer footer";
 }
 
 #contDisplay{
