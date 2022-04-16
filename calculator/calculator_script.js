@@ -15,10 +15,14 @@ for(let i =0;i<=9;i++){ //create number buttons 0-9
 
 for(let i=0;i<operatorButtons.length;i++){ //append the 'data-operator' attribute of buttons to the display div.
     operatorButtons[i].addEventListener("click",()=>display.innerText+=operatorButtons[i].dataset.operator)
+};
+function calculate(exp) {
+    return Function(`"use strict";return (${exp})`)();
 }
+equalsButton.addEventListener("click",()=>{
+    const answer = calculate(display.innerText);
+    console.log(answer);
+    display.innerText=answer;
+});
 
-equalsButton.addEventListener("click",function calculate(){
-    console.log(display.innerText);
-})
-
-clearButton.addEventListener("click",()=>display.innerText="")
+clearButton.addEventListener("click",()=>display.innerText="");
