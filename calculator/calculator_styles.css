@@ -4,19 +4,21 @@
 }
 
 #container{
-    width:50%;
     display:grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:    "header header"
+                            "header2 header2"
                             "num op" 
                             "footer footer";
 }
-
-#contDisplay{
-    height:50px;
+#contDisplay1{
+    height:25px;
     grid-area:header;
 }
-
+#contDisplay2{
+    height:25px;
+    grid-area:header2;
+}
 #contNumbers{
     display:grid;
     grid-area:num;
