@@ -7,15 +7,18 @@
     padding: 20px;
     margin:10px;
     border:2px dashed red;
+    display:flex;
+    justify-content: center;
 }
 
 .keys{
     padding:10px;
     border:2px dashed red;
-    display:inline-block;
     width:20px;
     height:20px;
     transition: border 0.3s;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .drum-hit{
