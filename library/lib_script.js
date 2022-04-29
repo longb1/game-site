@@ -4,7 +4,6 @@ let myLibrary = [];
 
 addBookBtn.addEventListener('click',displayBookOnPage);
 
-
 class Book {
   constructor(author, title, pageNumber, hasBeenRead) {
     this.author = author;
@@ -27,6 +26,5 @@ function displayBookOnPage(){
     newTab.classList.add("books");
     library.appendChild(newTab);
     newTab.innerText+=`${book}`;
-    // libraryTable.insertRow(libraryTable[myLibrary.indexOf(book)]);
 }
 
