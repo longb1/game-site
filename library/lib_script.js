@@ -4,8 +4,6 @@ const popup=document.getElementById("popupWindow");
 const library = document.getElementById("container"); /*where books are displayed */
 const submitFormBtn= document.getElementById("submitForm");
 
-const removeBookBtn=document.getElementsByClassName("removeBook");
-
 let myLibrary = []; 
 
 addBookBtn.addEventListener('click',()=>{launchPopup(popup)});
@@ -35,7 +33,6 @@ class Book {
 
 submitFormBtn.addEventListener('click',submitForm);
 
-// Let person1 = new subClass(property1,property2,property3) 
 
 function submitForm(e){
   e.preventDefault();
@@ -46,10 +43,8 @@ function submitForm(e){
 
   const newBook = new Book(author,title,pageNumber,hasBeenRead);
   myLibrary.push(newBook);
-  console.log(myLibrary);
 
-  console.log(`${author}, ${title},${pageNumber},${hasBeenRead}`);
-  document.forms[0].reset();
+  document.forms[0].reset(); //wipe form inputs
   displayBookOnPage(author,title,pageNumber,hasBeenRead);
 }
 
@@ -57,7 +52,15 @@ function submitForm(e){
 function displayBookOnPage(author,title,pageNumber,hasBeenRead){
     let newTab= document.createElement("div"); //create div to attach to
     newTab.classList.add("books");
-    library.appendChild(newTab);
     newTab.innerText+=`${author} ${title} ${pageNumber} ${hasBeenRead}`;
-}
 
+    let removeBtn=document.createElement("button"); //create button
+    removeBtn.textContent="Remove Book"; //button text
+    removeBtn.addEventListener("click",()=>{ //event listernet
+      newTab.remove()
+    })
+
+    library.appendChild(newTab);
+    newTab.appendChild(removeBtn)
+    
+}
