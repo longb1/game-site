@@ -4,6 +4,8 @@ const popup=document.getElementById("popupWindow");
 const library = document.getElementById("container"); /*where books are displayed */
 const submitFormBtn= document.getElementById("submitForm");
 
+const removeBookBtn=document.getElementsByClassName("removeBook");
+
 let myLibrary = []; 
 
 addBookBtn.addEventListener('click',()=>{launchPopup(popup)});
@@ -22,14 +24,6 @@ function closePopup(window,overlay){
   overlay.classList.remove("active")
 }
 
-
-
-
-
-submitFormBtn.addEventListener('click',submitForm);
-
-
-
 class Book {
   constructor(author, title, pageNumber, hasBeenRead) {
     this.author = author;
@@ -38,27 +32,32 @@ class Book {
     this.hasBeenRead = hasBeenRead;
   }
 }
+
+submitFormBtn.addEventListener('click',submitForm);
+
 // Let person1 = new subClass(property1,property2,property3) 
 
-function submitForm(){
-  const author = document.getElementById('bookAuthor').value
-  const title = document.getElementById('bookAuthor').value
-  const pageNumber= document.getElementById('bookAuthor').value
-  const hasBeenRead= document.getElementById('bookAuthor').value
+function submitForm(e){
+  e.preventDefault();
+  const author = document.querySelector("[data-bookAuthor]").value
+  const title = document.querySelector("[data-bookTitle]").value
+  const pageNumber= document.querySelector("[data-bookPages]").value
+  const hasBeenRead= document.querySelector("[data-hasRead]").value
+
+  const newBook = new Book(author,title,pageNumber,hasBeenRead);
+  myLibrary.push(newBook);
+  console.log(myLibrary);
+
+  console.log(`${author}, ${title},${pageNumber},${hasBeenRead}`);
+  document.forms[0].reset();
+  displayBookOnPage(author,title,pageNumber,hasBeenRead);
 }
 
-function addBookToLibrary(){
-    const userInput=prompt('Enter a book into your library.');
-    myLibrary.push(userInput);
-    console.log(myLibrary);
-    return userInput
-}
 
-function displayBookOnPage(){
-    const book=addBookToLibrary() //get user input
+function displayBookOnPage(author,title,pageNumber,hasBeenRead){
     let newTab= document.createElement("div"); //create div to attach to
     newTab.classList.add("books");
     library.appendChild(newTab);
-    newTab.innerText+=`${book}`;
+    newTab.innerText+=`${author} ${title} ${pageNumber} ${hasBeenRead}`;
 }
 
