@@ -17,3 +17,11 @@ body{
     width:150px;
     height:150px;
 }
+
+.x{
+    background-color: red;
+}
+
+.o{
+    background-color:green;
+}
