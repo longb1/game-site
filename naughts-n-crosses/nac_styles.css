@@ -1,0 +1,19 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#container{
+    border:red solid 2px;
+    width:500px;
+    height:500px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cell{
+    border:2px dotted blue;
+    width:150px;
+    height:150px;
+}
