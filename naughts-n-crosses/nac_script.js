@@ -1,48 +1,51 @@
 const cell = document.querySelectorAll(".cell");
 cell.forEach(cell => {
-    cell.addEventListener("click",(e)=>{
-        cell.classList.add("o");
+    cell.innerHTML("x")
+    cell.addEventListener("click",()=>{
+        gameFlow()
     })
 })
-
-let gameboard = {grid:['x','o','x','x','o','x','o','x','x']}
 
 console.log(gameboard.grid)
 gameboard.grid.forEach(element => console.log(element))
 
-// const Player = (name, level) => {
-// let health = level * 2;
-// const getLevel = () => level;
-// const getName  = () => name;
-// const die = () => {
-//     // uh oh
-// };
-// const damage = x => {
-//     health -= x;
-//     if (health <= 0) {
-//     die();
-//     }
-// };
-// const attack = enemy => {
-//     if (level < enemy.getLevel()) {
-//     damage(1);
-//     console.log(`${enemy.getName()} has damaged ${name}`);
-//     }
-//     if (level >= enemy.getLevel()) {
-//     enemy.damage(1);
-//     console.log(`${name} has damaged ${enemy.getName()}`);
-//     }
-// };
-// return {attack, damage, getLevel, getName};
-// };
 
+//game board module
+const gameboard = (() => {
+    let grid=new Array[9];
+    
+    const insertArray=(userSelection)=>{
+        grid.push(userSelection)
+    }
+    return {
+      insertArray,
+    };
+  })();
 
-// const jimmie = Player('jim', 10);
-// const badGuy = Player('jeff', 5);
-// jimmie.attack(badGuy);
+//control gameflow module
+const gameFlow = (() => {
+    //when component is clicked, push it to gameboard function
+    const insertToArray = ()=> gameboard.insertArray("x")
+    //it will be the other players turn
+    const insertArray=(userSelection)=>{
+        grid.push(userSelection)
+    }
+    return {
+      insertArray,
+    };
+})();
 
-
-
-// calculator.add(3,5); // 8
-// calculator.sub(6,2); // 4
-// calculator.mul(14,5534); // 77476
+function display_input(square){ 
+    if ( player_one == 1 ){
+        document.getElementById(square).innerHTML = "X";
+        player_one = 0;
+    } else {
+        document.getElementById(square).innerHTML = "O";    
+        player_one = 1;
+    }   
+}
+//player factory function
+const player = (sign) => {
+    let _sign = sign;
+    return Object.assign({}, sign);
+}
