@@ -19,7 +19,7 @@ function getGif(value){
         .then(function(response) {
             img.src = response.data.images.original.url;
         })
-        .catch(function(){
-            throw new Error('Could not find gif');
+        .catch(function(error){
+            throw new Error(error);
         })
 }
