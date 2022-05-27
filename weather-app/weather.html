@@ -15,17 +15,21 @@
         <h1>Weather Forecast</h1>
         <form>
             <label for="gifSearch">Enter a location</label><br>
-            <input type="text" data-search name="gifSearch" required><br>
+            <input type="text" data-location name="gifSearch" required><br>
 
             <label for="units">Select unit</label><br>
-            <select name="units" id="weather-unit">
-                <option value="Degrees">Degrees</option>
-                <option value="Fahrenheit">Fahrenheit</option>
+            <select name="units" id="weather-unit" data-unit>
+                <option value="metric">Degrees</option>
+                <option value="imperial">Fahrenheit</option>
             </select><br>
 
-            <button type="submit" data-gif-btn id="submitForm">Submit</button>
+            <button type="submit" data-submit-btn id="submitForm">Submit</button>
         </form>
         
+        <div id="forecast">
+            
+        </div>
+
     </div>
 </body>
 </html>
