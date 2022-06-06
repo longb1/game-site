@@ -1,0 +1,17 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+#container{
+    border: 2px dashed red;
+    display:flex;
+    place-content: center;
+
+}
+
+#container div{
+    width:50%;
+    height:50vh;
+    border :2px dashed blue;
+}
